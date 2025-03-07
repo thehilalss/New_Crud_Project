@@ -4,13 +4,13 @@ from uuid import uuid4  # Evrensel benzersiz UUID'ler oluşturmak için kullanı
 from requests import get  # HTTP GET istekleri yapmak için kullanılır
 
 # API'den veri çekme
-API_KEY = 'ca3dac370b6a487d921e8c5ed5f9e181'  # API anahtarınızı buraya girin
+API_KEY = 'ca3dac370b6a487d921e8c5ed5f9e181'  # API anahtarınızı buraya gireriz
 endpoint = f'https://newsapi.org/v2/everything?q=tesla&from=2025-02-07&sortBy=publishedAt&apiKey={API_KEY}'
 response = get(url=endpoint)
-data = response.json()  # API'den dönen JSON verisini Python sözlüğüne çevir
+data = response.json()  # API'den dönen JSON verisini Python sözlüğüne çevirir
 
 if 'articles' in data:
-    pprint(data['articles'][:3])  # İlk 3 makaleyi yazdır
+    pprint(data['articles'][:3])  # İlk 3 makaleyi yazdıran komut
 else:
     print("Hata: API'den beklenen veri alınamadı.")
 
@@ -25,7 +25,7 @@ if 'articles' in data and len(data['articles']) > 0:
     print(f"Source: {first_article.get('source', {}).get('name', 'Bilinmiyor')}")
 
 # Veri işlemleri için fonksiyonlar
-local_data = {}  # UUID ile saklanacak yerel veri deposu
+local_data = {}  # UUID ile saklanacak yerel veri deposunu belirttik
 
 
 def create_data(author: str, content: str, description: str, publishedAt: str) -> dict:
